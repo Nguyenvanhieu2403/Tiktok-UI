@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faSignOut,
     faSpinner,
     faUser,
@@ -26,6 +24,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons/index';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -196,12 +196,21 @@ function Header() {
                         <>
                             <Tippy delay={[200, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <Tippy delay={[200, 200]} content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    {/* <FontAwesomeIcon icon={faMessage} /> */}
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+
+                            <Tippy delay={[200, 200]} content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -213,7 +222,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/474014bom/anh-gai-xinh-cute-de-thuong-hot-girl-2.jpg"
                                 alt="Nguyễn Văn Hiếu"
