@@ -25,6 +25,71 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'es',
+                    title: 'Spanish',
+                },
+                {
+                    type: 'language',
+                    code: 'fr',
+                    title: 'French',
+                },
+                {
+                    type: 'language',
+                    code: 'de',
+                    title: 'German',
+                },
+                {
+                    type: 'language',
+                    code: 'it',
+                    title: 'Italian',
+                },
+                {
+                    type: 'language',
+                    code: 'pt',
+                    title: 'Portuguese',
+                },
+                {
+                    type: 'language',
+                    code: 'ru',
+                    title: 'Russian',
+                },
+                {
+                    type: 'language',
+                    code: 'ar',
+                    title: 'Arabic',
+                },
+                {
+                    type: 'language',
+                    code: 'zh',
+                    title: 'Chinese',
+                },
+                {
+                    type: 'language',
+                    code: 'ja',
+                    title: 'Japanese',
+                },
+                {
+                    type: 'language',
+                    code: 'ko',
+                    title: 'Korean',
+                },
+            ]
+        }
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -44,6 +109,18 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //Handle language change
+                console.log('Change language to', menuItem.code);
+                break;
+            default:
+                console.log('Menu item clicked', menuItem);
+        }
+    }
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -81,7 +158,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Log In</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange = {handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

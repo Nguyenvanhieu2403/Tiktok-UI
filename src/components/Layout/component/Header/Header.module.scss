@@ -14,6 +14,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width, 1150px);
+    padding: 0 var(--default-layout-horizonal-spaces);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +23,7 @@
 .logo {
 }
 
-.search, 
+.search,
 .search-result {
     width: 361px;
 }
@@ -42,7 +43,7 @@
         color: var(--black, #000);
         font-size: 1.6rem;
         background-color: transparent;
-        caret-color: var(--primary, #fe2c55) ;
+        caret-color: var(--primary, #fe2c55);
     }
 
     // Nếu placeholder không được hiển thị thì màu của icon search sẽ thay đổi
@@ -60,8 +61,8 @@
         background-color: rgba(22, 24, 35, 0.12);
     }
 
-    &:focus-within{
-        border-color:rgba(22, 24, 35, 0.2);
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
     }
 }
 
@@ -72,8 +73,7 @@
     color: rgba(22, 24, 35, 0.5);
 }
 
-
-.clear ,
+.clear,
 .loading {
     position: absolute;
     right: calc(var(--search-btn-width, 52px) + 16px);
@@ -105,4 +105,5 @@
     margin-left: 28px;
     padding: 4px 8px;
     background-color: transparent;
+    cursor: pointer;
 }
