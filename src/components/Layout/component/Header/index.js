@@ -172,6 +172,7 @@ function Header() {
                                 <button className={cx('action-btn')}>
                                     {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
                                     <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
