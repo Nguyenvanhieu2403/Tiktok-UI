@@ -19,6 +19,7 @@
         font-size: 1.6rem;
         background-color: transparent;
         caret-color: var(--primary, #fe2c55);
+        font-family: var(--font-family);
     }
 
     // Nếu placeholder không được hiển thị thì màu của icon search sẽ thay đổi
