@@ -92,6 +92,66 @@ const MENU_ITEMS = [
                     code: 'ko',
                     title: 'Korean',
                 },
+                {
+                    type: 'language',
+                    code: 'hi',
+                    title: 'Hindi',
+                },
+                {
+                    type: 'language',
+                    code: 'tr',
+                    title: 'Turkish',
+                },
+                {
+                    type: 'language',
+                    code: 'nl',
+                    title: 'Dutch',
+                },
+                {
+                    type: 'language',
+                    code: 'pl',
+                    title: 'Polish',
+                },
+                {
+                    type: 'language',
+                    code: 'sv',
+                    title: 'Swedish',
+                },
+                {
+                    type: 'language',
+                    code: 'fi',
+                    title: 'Finnish',
+                },
+                {
+                    type: 'language',
+                    code: 'no',
+                    title: 'Norwegian',
+                },
+                {
+                    type: 'language',
+                    code: 'da',
+                    title: 'Danish',
+                },
+                {
+                    type: 'language',
+                    code: 'el',
+                    title: 'Greek',
+                },
+                {
+                    type: 'language',
+                    code: 'hu',
+                    title: 'Hungarian',
+                },
+                {
+                    type: 'language',
+                    code: 'cs',
+                    title: 'Czech',
+                },
+                {
+                    type: 'language',
+                    code: 'th',
+                    title: 'Thai',
+                },
             ],
         },
     },
