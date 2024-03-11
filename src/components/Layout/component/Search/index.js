@@ -10,6 +10,7 @@ import AccountItem from '~/components/AccountItem';
 import Styles from './Search.module.scss';
 import { SearchIcon } from '~/components/Icons/index';
 import { useDebounce } from '~/Hooks';
+import * as searchServices from '~/apiServices/searchServices';
 
 const cx = classNames.bind(Styles);
 
@@ -29,17 +30,16 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+            const result = await searchServices.search(debounced);
+            
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
     }, [debounced]);
 
     const handleClear = () => {
