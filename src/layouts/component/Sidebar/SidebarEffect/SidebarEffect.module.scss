@@ -1,0 +1,39 @@
+.wrapper {
+    align-items: center;
+    color: var(--text-color);
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 30px;
+    position: relative;
+
+    .sidebar-effect {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+
+    .sidebar-effect__image {
+        max-width: 320px;
+    }
+
+    .sidebar-effect__content {
+        position: absolute;
+        left: 20%;
+        text-align: start;
+    }
+
+    .text {
+        padding-left: 16px;
+        color: rgb(255, 245, 201);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 3rem;
+        margin: 0px;
+    }
+}

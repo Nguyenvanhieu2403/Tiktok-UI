@@ -18,6 +18,8 @@ import {
 } from '~/components/Icons';
 import SuggestedAccounts from '../SuggestedAccounts';
 import * as userService from '~/services/accountService';
+import FooterSidebar from './FooterSidebar';
+import SidebarEffect from './SidebarEffect';
 
 const cx = classNames.bind(styles);
 
@@ -53,12 +55,22 @@ function Sidebar() {
                     icon={<UserGroupIcon />}
                     activeIcon={<UserGroupActiveIcon />}
                 />
-                <MenuItem title="Friends" to={config.routes.friends} icon={<FriendsIcon />} activeIcon={<FriendsActiveIcon />} />
-                <MenuItem title="Explore" to={config.routes.explore} icon={<ExploreIcon />} activeIcon={<ExploreActiveIcon />} />
+                <MenuItem
+                    title="Friends"
+                    to={config.routes.friends}
+                    icon={<FriendsIcon />}
+                    activeIcon={<FriendsActiveIcon />}
+                />
+                <MenuItem
+                    title="Explore"
+                    to={config.routes.explore}
+                    icon={<ExploreIcon />}
+                    activeIcon={<ExploreActiveIcon />}
+                />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
             <SuggestedAccounts label="Following accounts" data={suggestedAccounts} onViewChange={handleViewChange} />
-            {/* <SuggestedAccounts label="Following accounts" data={suggestedAccounts} /> */}
+            <FooterSidebar />
         </aside>
     );
 }
