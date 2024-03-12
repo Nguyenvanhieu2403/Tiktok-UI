@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,12 +10,12 @@ import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(Styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     const renderPriview = (props) => {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview data={data} />
                 </PopperWrapper>
             </div>
         );
@@ -25,17 +25,13 @@ function AccountItem() {
         <div>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPriview}>
                 <div className={cx('account-item')}>
-                    <img
-                        className={cx('avatar')}
-                        src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/474014bom/anh-gai-xinh-cute-de-thuong-hot-girl-2.jpg"
-                        alt="avatar"
-                    />
+                    <img className={cx('avatar')} src={data.avatar} alt={data.nickname} />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
-                            <strong>hieu.nguyen</strong>
-                            <FontAwesomeIcon icon={faCheckCircle} className={cx('verified')} />
+                            <strong>{data.nickname}</strong>
+                            {data.check && <FontAwesomeIcon icon={faCheckCircle} className={cx('verified')} />}
                         </p>
-                        <p className={cx('name')}>Nguyễn Văn Hiếu</p>
+                        <p className={cx('name')}>{data.first_name + ' ' + data.last_name}</p>
                     </div>
                 </div>
             </Tippy>
@@ -43,6 +39,8 @@ function AccountItem() {
     );
 }
 
-AccountItem.propTypes = {};
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AccountItem;
