@@ -1,0 +1,92 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 0px;
+    position: relative;
+    max-width: 692px;
+    height: unset;
+    width: unset;
+    transition-property: margin;
+    transition-duration: 0.3s;
+    margin-bottom: 0px;
+    width: calc(-388px + 100vw);
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.avatar {
+    & img {
+        display: block;
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
+.content {
+    padding-left: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 24px;
+        display: inline-block;
+    }
+
+    .title-sub {
+        font-weight: 400;
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .description {
+        font-weight: 500;
+    }
+
+    .music {
+        font-size: 1.4rem;
+        font-weight: 200;
+
+        .link-music {
+            margin-left: 10px;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.follow {
+    margin-left: 20px;
+}
+
+.controls {
+    display: flex;
+    position: relative;
+    width: 328px;
+    height: 584px;
+}
+
+.video {
+    overflow: hidden;
+    width: 328px;
+    height: 584px;
+    & video {
+        width: 328px;
+        height: 584px;
+    }
+}
+
+.actions {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: -80px;
+    bottom: 0;
+}
